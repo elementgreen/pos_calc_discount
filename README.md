@@ -8,6 +8,8 @@ This app addon sets POS order line unit prices to the default product **Sales Pr
 
 This addon also enables merging of order line items, so long as the discount amount is the same. Odoo usually does not merge order lines if they have a discount set.
 
+No discount is used if the price from the price list rules is larger than the default product Sales Price.
+
 Discount can still be changed manually in the point of sale interface, based on the default product Sales Price.
 
 ## Installing
@@ -33,7 +35,5 @@ Nothing else needs to be done, addon is active when installed.
 In the interest of retaining the existing price list rules, this addon calculates order line discounts based on the default product Sales Price. This could result in oddball discount percentages if the sales list price is calculated in a strange fashion (not just a simple percentage discount).
 
 There are likely cases where a lower price from the price list rules should not result in a discount being shown. This addon cannot currently be used in this case.
-
-No discount is used if the price from the price list rules is larger than the default product Sales Price.
 
 There could be other unexpected side effects of using the default Sales Price with a discount added instead of just using the final price. Bug reports welcome :-)
